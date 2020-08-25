@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { useQuery } from "react-query"
 import peopleClient from "../../helpers/apiHelper"
-//import PersonRow from "./PersonRow"
 
 const TableCSS = styled.div`
   table {
@@ -59,7 +58,6 @@ const PeopleTable = () => {
     "fetchPeople",
     peopleClient.list
   )
-  console.log("PEEEP", peopleList)
   return (
     <div>
       {isLoading ? (
