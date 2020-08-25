@@ -4,6 +4,7 @@ module Api
       def index
         render json: ApiWrapper.get('/people', {})
       end
+      def frequency; end
     end
   end
 end
