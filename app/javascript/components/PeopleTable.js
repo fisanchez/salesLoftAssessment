@@ -53,17 +53,29 @@ const RenderTable = people => {
   }
 }
 
+// Replace with react history or pull
+const navToFrequency = () => {
+  window.location.replace(window.location.href + "frequencies")
+}
+
 const PeopleTable = () => {
   const { data: peopleList, isLoading, isError } = useQuery(
     "fetchPeople",
     peopleClient.list
   )
+
   return (
     <div>
       {isLoading ? (
         <h1> Loading... </h1>
       ) : (
-        <RenderTable people={peopleList.data} />
+        <div>
+          <button onClick={() => navToFrequency()}>
+            {" "}
+            Show email character frequency{" "}
+          </button>
+          <RenderTable people={peopleList.data} />
+        </div>
       )}
     </div>
   )
