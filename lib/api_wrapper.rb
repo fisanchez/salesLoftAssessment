@@ -40,4 +40,11 @@ class ApiWrapper
     end
     @frequency_count
   end
+
+  # Will accept and compare the edit distance of the two
+  # Edit distance is how many steps it will take to transform the first email to another
+  # If it's over a certain threshhold - return as a possible duplicate
+  # TODO: Think of a way to efficiently do this for the front end - checking every email seems expencive.
+  # \ even with pagination
+  def self.duplicate_probabiliy; end
 end
