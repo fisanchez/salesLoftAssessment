@@ -8,11 +8,15 @@ const responseBody = response => response.data
 
 const requests = {
   get: url => client.get(url).then(responseBody),
+  post: (url, body) => client.post(url, body).then(responseBody),
 }
 
 const peopleClient = {
-  list: () => {
-    return requests.get("/people")
+  list: async () => {
+    return await requests.get("/people")
+  },
+  frequency: async emails => {
+    return await requests.post("/frequencies", emails)
   },
 }
 

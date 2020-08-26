@@ -31,7 +31,7 @@ class ApiWrapper
     characters.each { |char| @frequency_count[char] = 0 }
 
     # Remove the @email.com, we'll only focus on the email name
-    striped_emails = emails.map { |email| email.strip(/@/).first }
+    striped_emails = emails.map { |email| email.split(/@/).first }
     
     striped_emails.each do |email| 
       email.split("").each do |char|
