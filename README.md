@@ -4,7 +4,8 @@
 1. `cp .env.sample .env`
 2. populate .env file 
 3. `bundle install`
-4. `rails s -p 3000`
+4. `yarn install`
+5. `rails s -p 3000`
 
 ## Pages
 
