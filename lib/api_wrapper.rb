@@ -27,14 +27,14 @@ class ApiWrapper
   # @return Hash - Key value pairs of character and total count of all emails
   def self.email_frequency(emails)
     raise StandardError.new "Expecting array, array not found" if emails.class != Array
-    characters = ('a'..'z').to_a + ('0'..'9').to_a
+    characters = ('a'..'z').to_a + ('0'..'9').to_a + ['_','.']
     characters.each { |char| @frequency_count[char] = 0 }
 
     # Remove the @email.com, we'll only focus on the email name
     striped_emails = emails.map { |email| email.split(/@/).first }
     
     striped_emails.each do |email| 
-      email.split("").each do |char|
+      email.chars.each do |char|
         @frequency_count[char] += 1
       end
     end
